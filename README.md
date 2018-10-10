@@ -1,5 +1,7 @@
 # Android Learning route 1--- Java
 
+https://mp.weixin.qq.com/s/nQt0-3Chi2bnboJUyDRiQQ
+
 ## Java基础
 
 - Java Object类方法

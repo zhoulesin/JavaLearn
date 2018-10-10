@@ -14,7 +14,7 @@ public class Connsumer implements Runnable{
 	public void run() {
 		if(list.size() == 0) {
 			try {
-				System.out.println("²úÆ·±»È«²¿Ïû·Ñ£¬µÈ´ıÉú²úÕßÉú²ú");
+				System.out.println("äº§å“è¢«å…¨éƒ¨æ¶ˆè´¹ï¼Œç­‰å¾…ç”Ÿäº§è€…ç”Ÿäº§");
 				synchronized (list) {
 					list.wait();
 				}
@@ -23,7 +23,7 @@ public class Connsumer implements Runnable{
 				e.printStackTrace();
 			}
 		}else {
-			System.out.println("Ïû·ÑÕßÏû·Ñ²úÆ·");
+			System.out.println("æ¶ˆè´¹è€…æ¶ˆè´¹äº§å“");
 			list.remove(0);
 			synchronized (list) {
 				list.notifyAll();

@@ -12,14 +12,14 @@ public class ObjectWaitNotify {
 		
 		synchronized(t) {
 			try {
-				System.out.println("main thread µÈ´ýtÏß³ÌÖ´ÐÐÍê");
+				System.out.println("main thread ç­‰å¾…tçº¿ç¨‹æ‰§è¡Œå®Œ");
 				t.wait();
-				System.out.println("±»notify»½ÐÑ£¬µÃÒÔ¼ÌÐøÖ´ÐÐ");
+				System.out.println("è¢«notifyå”¤é†’ï¼Œå¾—ä»¥ç»§ç»­æ‰§è¡Œ");
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-			System.out.println("Ïß³ÌtÖ´ÐÐÏà¼Ó½á¹û:" + r.getTotal());
+			System.out.println("çº¿ç¨‹tæ‰§è¡Œç›¸åŠ ç»“æžœ:" + r.getTotal());
 		}
 	}
 	
@@ -29,14 +29,14 @@ public class ObjectWaitNotify {
 		@Override
 		public void run() {
 			synchronized(t) {
-				System.out.println("Thread name is£º"+ Thread.currentThread().getName());
+				System.out.println("Thread name isï¼š"+ Thread.currentThread().getName());
 				for (int i = 0; i < 10; i++) {
 					total += i;
 				}
 				t.notify();
-				System.out.println("Í¬²½´úÂë¿éÖÐ");
+				System.out.println("åŒæ­¥ä»£ç å—ä¸­");
 			}
-			System.out.println("Í¬²½´úÂë¿éÍâ");
+			System.out.println("åŒæ­¥ä»£ç å—å¤–");
 		}
 		
 		public int getTotal() {

@@ -16,7 +16,7 @@ public class Producer implements Runnable {
 
 		if (list.size() >= 10) {
 			try {
-				System.out.println("¿â´æÒÑÂú£¬µÈ´ıÏû·ÑÕßÏû·Ñ");
+				System.out.println("åº“å­˜å·²æ»¡ï¼Œç­‰å¾…æ¶ˆè´¹è€…æ¶ˆè´¹");
 				synchronized (list) {
 					list.wait();
 				}
@@ -25,7 +25,7 @@ public class Producer implements Runnable {
 			}
 		} else {
 			list.add(new Product());
-			System.out.println("Éú²úÒ»¸öÏû·ÑÕß");
+			System.out.println("ç”Ÿäº§ä¸€ä¸ªæ¶ˆè´¹è€…");
 			synchronized (list) {
 				list.notifyAll();
 			}
