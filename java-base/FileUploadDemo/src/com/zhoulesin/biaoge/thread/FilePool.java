@@ -21,5 +21,18 @@ public class FilePool {
 	
 	private FilePool(int count) {
 		this.queue = new ProcessHandler[ReameProtocol.MAX_MSG_LEN];
+		this.lock = new ReentrantLock();
+		this.notEmpty = this.lock.newCondition();
+		this.fullEmpty = this.lock.newCondition();
+		this.initThread(i);
+	}
+	
+	public int getCount() {
+		return this.current;
+	}
+	
+	private void initThread(int i) {
+		TaskProcessThread abThread1 = new TaskProcessThread(ReameProtocol.fileProcess[i],this);
+		abThread1.start();
 	}
 }

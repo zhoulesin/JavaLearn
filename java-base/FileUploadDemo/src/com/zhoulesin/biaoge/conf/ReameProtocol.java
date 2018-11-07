@@ -27,6 +27,12 @@ public class ReameProtocol {
 	public static final TcpFileProcess[] fileProcess=  new TcpFileProcess[3];
 	
 	static {
-		fileProcess[0] = new TcpFileProcess();
+		fileProcess[0] = new TcpFileProcess((byte) 0);
+		fileProcess[1] = new TcpFileProcess((byte) 1);
+		fileProcess[2] = new TcpFileProcess((byte) 2);
+		checkThread = new TcpCheckThread();
+		checkThread.start();
 	}
+	
+	public ReameProtocol() {}
 }

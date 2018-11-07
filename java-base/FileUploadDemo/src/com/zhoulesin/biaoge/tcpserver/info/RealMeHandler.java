@@ -1,7 +1,7 @@
 package com.zhoulesin.biaoge.tcpserver.info;
 
 public interface RealMeHandler {
-	void bussinessProcess(byte[] process);
+	void businessProcess(byte[] data);
 	
 	void connectSuccess(RealMeIoSession session);
 	

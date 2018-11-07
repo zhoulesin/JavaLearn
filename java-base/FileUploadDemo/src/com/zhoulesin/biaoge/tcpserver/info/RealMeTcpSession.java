@@ -2,6 +2,7 @@ package com.zhoulesin.biaoge.tcpserver.info;
 
 import java.nio.channels.SocketChannel;
 
+import com.zhoulesin.biaoge.conf.ReameProtocol;
 import com.zhoulesin.biaoge.tcpserver.ts.RealmeTcpServer;
 
 public class RealMeTcpSession implements RealMeIoSession{
@@ -36,7 +37,7 @@ public class RealMeTcpSession implements RealMeIoSession{
 
 	@Override
 	public void sendMessage(int mid, int cid, int seq, int status, int iid, byte[] body) {
-		this.tsClient.sendToMessage(mid,cid,seq,status,iid,body);
+		this.tsClient.sendToServer(mid,cid,seq,status,iid,body);
 	}
 
 	@Override
@@ -44,8 +45,8 @@ public class RealMeTcpSession implements RealMeIoSession{
 		this.tsClient.stopClient();
 	}
 
-	public void setTsClient(RealmeTcpServer realmeTcpServer) {
-		
+	public void setTsClient(RealmeTcpServer tsClient) {
+		this.tsClient = tsClient;
 	}
 
 }

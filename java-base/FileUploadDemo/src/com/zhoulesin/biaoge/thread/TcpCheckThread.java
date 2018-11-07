@@ -12,6 +12,18 @@ public class TcpCheckThread extends Thread{
 	@Override
 	public void run() {
 		this.len = ReameProtocol.fileProcess.length;
+		
+		while(true) {
+			while(true) {
+				try {
+					sleep(this.WAIT_TIME);
+					for(this.result= 0;this.result < this.len;++this.result) {
+						ReameProtocol.fileProcess[this.result].monitor();
+					}
+				} catch (Exception e) {
+				}
+			}
+		}
 	}
 	
 }
